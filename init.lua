@@ -127,7 +127,7 @@ vim.keymap.set('n', '<leader>h', '<C-w><C-h>', { desc = 'Move focus to the left 
 vim.keymap.set('n', '<leader>l', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<leader>j', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<leader>k', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-vim.keymap.set('n', '<leader>t', ':!', { desc = 'Move focus to the upper window' })
+-- vim.keymap.set('n', '<leader>t', ':!', { desc = 'Move focus to the upper window' })
 vim.keymap.set('n', '<Leader>fc', function()
   vim.cmd 'edit ~/.config/nvim/init.lua'
 end, { noremap = true, silent = true, desc = 'Open specific file' })
@@ -631,6 +631,8 @@ require('lazy').setup({
         -- ts_ls = {},
         --
 
+        eslint = {},
+
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -689,7 +691,7 @@ require('lazy').setup({
     cmd = { 'ConformInfo' },
     keys = {
       {
-        '<leader>f',
+        '<leader>fi',
         function()
           require('conform').format { async = true, lsp_format = 'fallback' }
         end,
@@ -719,7 +721,7 @@ require('lazy').setup({
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        javascript = { 'prettierd', 'prettier', stop_after_first = true },
       },
     },
   },
